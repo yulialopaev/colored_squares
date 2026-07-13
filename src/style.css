@@ -8,6 +8,7 @@
 }
 
 button {
+    text-align: center;
     width: 60px;
     height: 60px;
     border-radius: 10px;
@@ -16,25 +17,6 @@ button {
     box-shadow: 0 0 10px 2px rgb(119 118 118 / 0.86);
 }
 
-#red-button {
-    background-color: red;
-
-}
-
-#green-button {
-    background-color: green;
-
-}
-
-#blue-button {
-    background-color: blue;
-
-}
-
-#yellow-button {
-    background-color: yellow;
-
-}
 
 .big-container {
     margin: 40px 0;

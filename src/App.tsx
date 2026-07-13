@@ -1,16 +1,26 @@
-import { useState } from 'react'
+import {useState} from 'react'
 import BigSquare from './components/BigSquare'
-import SmallSquares from './components/SmallSquares'
+
 
 function App() {
-  const [color, setColor] = useState("white")
+    const [color, setColor] = useState("white")
 
-  return (
-    <>
-      <BigSquare color = {color}/>
-      <SmallSquares onColorClick={setColor}/>
+    const colors = ["red", "blue", "green", "yellow", "black", "brown"]
+
+    const smallButtons = colors.map(color =>
+    <button type={"button"}
+            id={color}
+            style={{backgroundColor: color}}
+            onClick={() => setColor(color)}></button> )
+
+    return (
+        <>
+      <BigSquare color={color}/>
+           <div className={"small-container"}>
+               {smallButtons}
+           </div>
       </>
-  )
+    )
 }
 
 export default App
