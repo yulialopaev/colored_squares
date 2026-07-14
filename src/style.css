@@ -13,8 +13,8 @@ button {
     height: 60px;
     border-radius: 10px;
     margin: 10px 5px;
-    border: 5px solid white;
     box-shadow: 0 0 10px 2px rgb(119 118 118 / 0.86);
+    cursor: pointer;
 }
 
 
@@ -31,4 +31,19 @@ button {
     border-radius: 12px;
     border: 5px solid white;
     box-shadow: 0 0 10px 2px rgb(119 118 118 / 0.86);
+}
+
+.random-container {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#random-color {
+    width: 80px;
+    height: 80px;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 4px;
+    color: white;
 }

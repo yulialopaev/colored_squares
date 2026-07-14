@@ -1,6 +1,8 @@
 import {useState} from 'react'
 import BigSquare from './components/BigSquare'
 import SmallSquares from "./components/SmallSquares.tsx";
+import {generateRandomColor} from "./use_cases/generateRandomColor.ts";
+import RandomColorSquare from "./components/RandomColorSquare.tsx";
 
 
 function App() {
@@ -10,18 +12,15 @@ function App() {
         setColor(color)
     }
 
-    // const colors = ["red", "blue", "green", "yellow", "black", "brown"]
-    //
-    // const smallButtons = colors.map(color =>
-    //     <button type={"button"}
-    //             id={color}
-    //             style={{backgroundColor: color}}
-    //             onClick={() => setColor(color)}></button>)
+    const handleRandomColor = () => {
+        setColor(generateRandomColor())
+    }
 
     return (
         <>
       <BigSquare color={color}/>
-      <SmallSquares onClick={handleChangeColor}/>
+      <SmallSquares backgroundColor={color} onClick={handleChangeColor}/>
+            <RandomColorSquare backgroundColor={color} onClick={handleRandomColor}/>
       </>
     )
 }
