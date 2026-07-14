@@ -18,10 +18,10 @@ function App() {
 
     return (
         <>
-      <BigSquare color={color}/>
-      <SmallSquares backgroundColor={color} onClick={handleChangeColor}/>
+            <BigSquare color={color}/>
+            <SmallSquares backgroundColor={color} onClick={handleChangeColor}/>
             <RandomColorSquare backgroundColor={color} onClick={handleRandomColor}/>
-      </>
+        </>
     )
 }
 
