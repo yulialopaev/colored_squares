@@ -10,7 +10,8 @@ function RandomColorSquare({backgroundColor, onClick}: RandomColorSquareProps) {
                     id={"random-color"}
                     style={{
                         backgroundColor: backgroundColor,
-                        border: "5px solid white"
+                        border: "5px solid white",
+                        color: backgroundColor === "black"? "white" : "black"
                     }}
                     title={backgroundColor}
                     onClick={onClick}>Get random color
