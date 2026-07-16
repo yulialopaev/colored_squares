@@ -1,28 +1,35 @@
-import {useState} from 'react'
+import {Component} from 'react'
 import BigSquare from './components/BigSquare'
 import SmallSquares from "./components/SmallSquares.tsx";
 import {generateRandomColor} from "./use_cases/generateRandomColor.ts";
 import RandomColorSquare from "./components/RandomColorSquare.tsx";
 
+type AppState = {
+    color: string
+}
 
-function App() {
-    const [color, setColor] = useState("white")
+class App extends Component<{}, AppState> {
 
-    const handleChangeColor = (color: string) => {
-        setColor(color)
+    state: AppState = {
+        color: "white",
     }
 
-    const handleRandomColor = () => {
-        setColor(generateRandomColor())
+    handleChangeColor = (color: string) => {
+        this.setState({color: color})
     }
 
-    return (
-        <>
-            <BigSquare color={color}/>
-            <SmallSquares backgroundColor={color} onClick={handleChangeColor}/>
-            <RandomColorSquare backgroundColor={color} onClick={handleRandomColor}/>
+    handleRandomColor = () =>{
+        this.setState({color: generateRandomColor()})
+    }
+ render() {
+     return (
+         <>
+            <BigSquare color={this.state.color}/>
+            <SmallSquares backgroundColor={this.state.color} onClick={this.handleChangeColor}/>
+            <RandomColorSquare backgroundColor={this.state.color} onClick={this.handleRandomColor}/>
         </>
-    )
+     )
+ }
 }
 
 export default App

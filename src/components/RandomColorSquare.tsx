@@ -1,23 +1,27 @@
+import {Component} from "react";
+
 type RandomColorSquareProps = {
     backgroundColor: string
     onClick: () => void
 }
 
-function RandomColorSquare({backgroundColor, onClick}: RandomColorSquareProps) {
-    return (
-        <div className={"random-container"}>
+class RandomColorSquare extends Component<RandomColorSquareProps> {
+    render() {
+        return (
+            <div className={"random-container"}>
             <button type={"button"}
                     id={"random-color"}
                     style={{
-                        backgroundColor: backgroundColor,
-                        border: "5px solid white",
-                        color: backgroundColor === "black"? "white" : "black"
+                        backgroundColor: this.props.backgroundColor,
+
+                        color: this.props.backgroundColor === "black" ? "white" : "black"
                     }}
-                    title={backgroundColor}
-                    onClick={onClick}>Get random color
+                    title={this.props.backgroundColor}
+                    onClick={this.props.onClick}>Get random color
             </button>
         </div>
-    )
+        )
+    }
 }
 
 export default RandomColorSquare

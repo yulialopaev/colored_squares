@@ -1,15 +1,18 @@
+import {Component} from "react";
+
 type BigSquareProps = {
     color: string
 }
 
-function BigSquare({color}: BigSquareProps) {
+class BigSquare extends Component<BigSquareProps> {
 
-
-    return (
-        <div className={"big-container"}>
-            <div className={"big-square"} style={{backgroundColor: color}}></div>
+    render () {
+        return (
+            <div className={"big-container"}>
+            <div className={"big-square"} style={{backgroundColor: this.props.color}}></div>
         </div>
-    )
+        )
+    }
 }
 
 export default BigSquare
